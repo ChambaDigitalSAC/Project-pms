@@ -4,13 +4,13 @@ import * as React from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 
-const Modal = DialogPrimitive.Root
+export const Modal = DialogPrimitive.Root
 
-const ModalTrigger = DialogPrimitive.Trigger
+export const ModalTrigger = DialogPrimitive.Trigger
 
-const ModalPortal = DialogPrimitive.Portal
+export const ModalPortal = DialogPrimitive.Portal
 
-const ModalOverlay = React.forwardRef<
+export const ModalOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
 >(({ className, ...props }, ref) => (
@@ -25,7 +25,7 @@ const ModalOverlay = React.forwardRef<
 ))
 ModalOverlay.displayName = 'ModalOverlay'
 
-const ModalContent = React.forwardRef<
+export const ModalContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content> & {
     onSubmit?: React.FormEventHandler<HTMLFormElement>
@@ -64,16 +64,14 @@ const ModalContent = React.forwardRef<
 ))
 ModalContent.displayName = 'ModalContent'
 
-const ModalHeader = ({ children }: { children: React.ReactNode }) => (
+export const ModalHeader = ({ children }: { children: React.ReactNode }) => (
   <div className="mb-4">{children}</div>
 )
 
-const ModalTitle = DialogPrimitive.Title
+export const ModalTitle = DialogPrimitive.Title
 
-const ModalDescription = DialogPrimitive.Description
+export const ModalDescription = DialogPrimitive.Description
 
-const ModalFooter = ({ children }: { children: React.ReactNode }) => (
+export const ModalFooter = ({ children }: { children: React.ReactNode }) => (
   <div className="mt-4 flex justify-end gap-2">{children}</div>
 )
-
-export { Modal, ModalTrigger, ModalPortal, ModalOverlay, ModalContent, ModalHeader, ModalTitle, ModalDescription, ModalFooter }
